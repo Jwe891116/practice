@@ -14,7 +14,16 @@ const server = http.createServer((req, res) => {
     // set the happy response header
     res.writeHead(200, { "Content-Type": "text/plain" });
     res.end("What do you want to know?\n");
-  } else {
+  } else if (req.url === "/hello"){
+    res.writeHead(200, {"Content-Type": "test/plain"});
+    res.end("My name is Joshua Emmanuel.\n");
+  }else if (req.url ==="/university"){
+    res.writeHead(200, {"Content-type": "text/plain"});
+    res.end("University of Belize.\n");
+  }else if (req.url === "/class"){
+    res.writeHead(200, {"Content-Type": "text/plain"});
+    res.end("GUI Programming.\n");
+  }else {
     // set the sad response header
     res.writeHead(404, { "Content-Type": "text/plain" });
     res.end("404 Not Found.\n");
